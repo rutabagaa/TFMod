@@ -1076,6 +1076,7 @@ function generateCurse() {
 			]);
 			var passageSize = decidedAndTrue(stagesTF) ? "a little larger"
 				: randomFrom(["unnaturally deep and large",
+					"to become permanently puffy",
 					"to be unnaturally accomodating, shifting your guts to make room",
 					"large enough to easily take a fist",
 					"large enough to leave a visible bulge in your pants"]);
@@ -1203,16 +1204,6 @@ function generateCurse() {
 			requires: [subjectInhuman, humanoidOrBeastOption, veryUncommon],
 		},
 		{
-			makeTransformationText:function(){return String.format("your genitals transform into the mouth of {0}", specificTarget ? "the" : subjectArticle);},
-			additionalExplaination: randomFrom([
-				"You have no control over your new mouth.",
-				"Whatever was between your legs before ends up incorporated into your new mouth.",
-				"Whatever was between your legs before ends up incorporated into your original mouth.",
-				"Eating is an orgasmic experience."]),
-			sets: [doNotAssignSubjectSex, becomingCreatureHybrid, allowBeastsIfHumanoid],
-			requires: [lewd, veryUncommon, humanoidOption]
-		},
-		{
 			makeTransformationText:function(){return String.format("{0}", happensOnce 
 				? "you spend the next 24 hours transforming into" : 
 				randomFrom([
@@ -1280,9 +1271,11 @@ function generateCurse() {
 				"You go unconcious when deflated.",
 				"You can still move when transformed.", 
 				"Everyone loves playing with you.",
+				"Whatever was between your legs becomes your nozzle.",
 				lewdSelected || nsfwSelected ? "Your asshole turns into your new nozzle." 
-					: "Your nozzle is in the place of your belly button.",
-				"Your valve is an erogenous zone."])},
+				: "Your nozzle is in the place of your belly button.",
+				"Your valve is an erogenous zone."
+				])},
 			sets: [subjectIsInanimate, allowBeasts],
 			requires: [subjectInhuman, inanimateOption, tfAtomic],
 		},
@@ -1293,7 +1286,7 @@ function generateCurse() {
 				specificTarget ? "the" : subjectArticle);},
 			additionalExplaination: beastsSelected ? randomFrom([
 				"You adopt the donor's sexual urges.",
-				"Your lewder thoughts become those of a {2}.",
+				"Your lewder thoughts become those of the donor. They feel quite alien to you.",
 				"You adopt the donor's sexual preferences.",]) 
 				: "At least you're still mostly human.",
 			requires: [nsfw, genitalReplacementAllowed, tfAtomic, subjectSexBecomesSpecificTriggerSex, humanoidOption],
@@ -1355,6 +1348,7 @@ function generateCurse() {
 				randomFrom([
 					"The spirit is always fighting you for control",
 					"The spirit forcibly takes control if you don't sate their needs",
+					"The spirit transforms parts of your body spontaneously",
 					"The spirit asserts itself by transforming parts of your body at inopportune times",
 					"Control of your body swaps between you and the spirit at random intervals"]),
 				randomFrom([
@@ -1398,14 +1392,17 @@ function generateCurse() {
 			]),
 			randomFrom([
 				"breast-like",
-				"beastial",
+				"udder-like",
+				"bestial",
 				"sloshing",
 				"",
 			]),
 			randomFrom([
 				" They swell steadily throughout the day and, if they don't get milked, begin to ache.",
+				" They swell steadily throughout the day, eventually reaching a rather inconvenient size.",
 				" You're lactating, but you can never milk yourself.",
 				" They bounce noticeably with every step.",
+				" They jostle awkwardly between your legs as you walk.",
 				" Your milk is deeply addictive to others.",
 				" Anyone who consumes your milk is also afflicted with your curse.",
 				"",
@@ -1657,7 +1654,7 @@ function generateCurse() {
 			makeAdditionalExplaination: function() {return randomFrom([
 				"A fishy smell follows you around.",
 				"Your rubbery skin must be moistened regularly.",
-				"Your skin becomes a lot more... blubbery",
+				"Your skin becomes a lot more... blubbery.",
 				lewdSelected && decidedAndFalse(subjectFemale) ? "Your penis is prehensile, but it often moves with a mind of its own." : ""]);},
 			requires: [uncommon, becomingCreatureHybrid, beastOption],
 			sets: [mundaneAnimalSubject, setPussyName("muscular vent"), setDickName("long, prehensile penis")],
@@ -1708,33 +1705,12 @@ function generateCurse() {
 			sets: [mundaneAnimalSubject, setPussyName("scaled vent"), setDickName("hemipenes")],
 		},
 		{
-			subjectText: "last animal you touched", 
-			requires: [uncommon, varyingSubject, beastOption, tfAtomic],
-			sets: [mundaneAnimalSubject, specificIndividualTarget, setExtremitiesName("paws"), doNotAssignSubjectSex],
-		},
-		{
 			subjectText: "last animal you ate", 
 			closingRemarkText: randomFrom([
 				"Sample any exotic meats lately?",
-				"Mmm-mm. This beef tastes just like you."]),
+				"Mmm-mm. This tastes just like you."]),
 			requires: [uncommon, varyingSubject, beastOption, tfAtomic],
 			sets: [mundaneAnimalSubject, specificIndividualTarget, setExtremitiesName("hooves"), doNotAssignSubjectSex],
-		},
-		{
-			subjectText: "last fantasy creature you killed in a video game", 
-			closingRemarkText: "Mana really does flow from computer monitors these days.",
-			sets: [specificIndividualTarget, subjectInhuman, nonMundaneSubject, setExtremitiesName("paws"), doNotAssignSubjectSex],
-			requires: [varyingSubject, nonMundaneSubject, beastOption, tfAtomic],
-		},
-		{
-			subjectText: "current year's Chinese zodiac animal", 
-			sets: [specificIndividualTarget, subjectInhuman, nonMundaneSubject, setExtremitiesName("paws"), doNotAssignSubjectSex],
-			requires: [uncommon, varyingSubject, nonMundaneSubject, beastOption],
-		},
-		{
-			subjectText: "Chinese zodiac animal assigned to you at birth", 
-			sets: [specificIndividualTarget, subjectInhuman, nonMundaneSubject, setExtremitiesName("paws", doNotAssignSubjectSex)],
-			requires: [uncommon, varyingSubject, nonMundaneSubject, beastOption],
 		},
 		{
 			makeSubjectText: function(){return isDecided(subjectFemale) ? subjectFemale ? "dire wolf bitch": "dire wolf stud" : "dire wolf";},
@@ -1769,6 +1745,7 @@ function generateCurse() {
 				"You have a lust for hoarding treasure that is impossible to ignore.",
 				"You become hopelessly narcissistic.", 
 				"You have an uncanny ability to get others to follow your orders.", 
+				"You are overcome by a deep, burning sexual drive.",
 				"People who spend a lot of time near you slowly transform into obedient kobold slaves.", 
 				]),
 			closingRemarkText: randomFrom([
@@ -2094,6 +2071,10 @@ function generateCurse() {
 			requires: [nsfw, subjectIsLiving]
 		},
 		{
+			complicationText: "You smell pretty bad.",
+			requires: [nsfw, subjectIsLiving]
+		},
+		{
 			complicationText: String.format("Also, you must lay {0} every day.", randomFrom(["one large egg", "one fist-sized egg", "one melon-sized egg", "a dozen eggs", "six eggs"])),
 			additionalExplaination: randomFrom([
 				"The time of day when you lay your eggs is random. A shifting feeling in your belly gives you 30 seconds warning before you drop.",
@@ -2138,6 +2119,10 @@ function generateCurse() {
 		},
 		{
 			complicationText: "Your wardrobe changes to accommodate your new form."
+		},
+		{
+			complicationText: "While transformed, your bladder is much weaker.",
+			closingRemarkText: "You should look into fixing that leak. Diapers, maybe?"
 		},
 		{
 			complicationText: "Your clothes are ruined by the transformation.",
@@ -2185,7 +2170,7 @@ function generateCurse() {
 			makeComplicationText: function(){return isUndecided(subjectFemale) 
 				? "Your genitals are oversized." : 
 					subjectFemale ? String.format("Your {0} is oversized and gets dripping wet whenever you're aroused.", pussyName) 
-					: "Your penis is exceptionally large, and oozes pre whenever you're aroused.";},
+					: "Your penis is exceptionally large, and oozes precum whenever you're aroused.";},
 			requires: [lewd, subjectIsLiving]
 		},
 		{
@@ -2250,6 +2235,11 @@ function generateCurse() {
 		},
 		{
 			complicationText: "Whenever the other person orgasms, so do you. And vice-versa.",
+			requires: [nsfw, subjectIsHuman, specificIndividualTarget],
+		},
+		{
+			complicationText: "Whenever the other person urinates, so do you. And vice-versa.",
+			closingRemarkText: "You should look into fixing that leak.",
 			requires: [nsfw, subjectIsHuman, specificIndividualTarget],
 		},
 		{
