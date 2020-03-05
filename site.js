@@ -953,6 +953,7 @@ function generateCurse() {
 				"The trigger phrase is any comment about your appearance.",
 				"The trigger phrase is any of your online usernames.",
 				"The trigger phrase is any compliment directed toward you.",
+				"The trigger phrase is any question directed toward you.",
 				"The trigger phrase is any insult directed toward you.",
 				"The trigger phrase is the name of the creature you transform into.",
 				"The trigger phrase is immediately texted to everyone on your contacts list.",
@@ -1021,14 +1022,13 @@ function generateCurse() {
 		"a thicc",
 		"a plump",
 		"a chubby",
+		"a tubby",
 		"a fat",
 		"an overweight",
 		decidedAndTrue(subjectFemale) ? "a volumptuous" : "a dad-bod", 
-		"an athletic",
-		"a musclebound",
 		"a curvy",
 		decidedAndTrue(subjectFemale) ? "a tomboy" : "a feminine", 
-		decidedAndTrue(subjectFemale) ? "a flat-chested" : "a sissy", 
+		decidedAndTrue(subjectFemale) ? "a flat-chested" : "a girly", 
 		decidedAndTrue(subjectFemale) ? "a shortstack" : "a short",
 		"a gigantic",]);};
 	var pussyName = randomFrom(["pussy", "vulva", "vagina"]);
@@ -1069,6 +1069,7 @@ function generateCurse() {
 			var clitSize = decidedAndTrue(stagesTF) ? "an additional inch"
 				: randomFrom(["to the size of your thumb",
 					"large enough that it makes a bump in your pants when you're horny",
+					"large enough that it always makes a bump in your pants.",
 					"large enough that it rubs against your pants as you walk"]);
 			var lipsSize = decidedAndTrue(stagesTF) ? "a bit bigger" : randomFrom([
 				"to be unnaturally large",
@@ -1121,15 +1122,15 @@ function generateCurse() {
 	//TODO: actually do these
 	var cockTailTF = {
 		makeTransformationText:function(){
-			return "you grow a prehensile tail tipped with a functioning penis";
+			return "";
 		},
 		subjectText: "",
 		makeAdditionalExplaination: function() {
 			return randomFrom([
-				"Your tail has a pair of balls nestled at its base that jostle against your ass.",
-				"You don't have any control over your tail, and it's very horny.",
-				"Your tail attempts to penetrate and rub against things when you're horny.",
-				"You can pee through your tail."
+				"",
+				"",
+				"",
+				""
 			]);
 		},
 		sets: [subjectIsHuman, doNotRenderSubject, subjectSexBecomesStartingSex, doNotAssignSubjectSex],
@@ -1149,17 +1150,17 @@ function generateCurse() {
 	var lippleTF = {
 		makeTransformationText:function(){
 				return subjectFemale ? 
-				"your nipples invert, your areola reform into smacking lips, and you are left with fully-functioning mouths in the place of nipples"
-			: "you grow a pair of breasts with fully-functioning mouths in the place of nipples";
+				""
+			: "";
 		},
 		subjectText: "",
 		makeAdditionalExplaination: function() {
 			return randomFrom([
-				"Your nipples catcall strangers.",
-				"You can only speak using your lipples.",
-				"You can't stop your nipples from speaking your dirty thoughts.",
-				"Eating with your lipples is orgasmic.",
-				"Your lipples nurse anything you put near them."
+				"",
+				"",
+				"",
+				"",
+				""
 			]);
 		},
 		sets: [subjectIsHuman, doNotRenderSubject, subjectSexBecomesStartingSex, doNotAssignSubjectSex],
@@ -1258,7 +1259,7 @@ function generateCurse() {
 				subjectFemale ? "monstergirl" : "monsterboy",
 				specificTarget ? "the" : subjectArticle);},
 			closingRemarkText: randomFrom([
-				"Just inhuman enough for mass appeal.", "How kawaii!", "Still animal where it counts."]),
+				"Just inhuman enough for mass appeal.", "How kawaii!", "Animal where it counts."]),
 			sets: [becomingCreatureHybrid, determinesRandomSex],
 			requires: [subjectInhuman, humanoidOption],
 		},
@@ -1277,6 +1278,20 @@ function generateCurse() {
 				lewdSelected || nsfwSelected ? "Your asshole turns into your new nozzle." 
 				: "Your nozzle is in the place of your belly button.",
 				"Your valve is an erogenous zone."
+				])},
+			sets: [subjectIsInanimate, allowBeasts],
+			requires: [subjectInhuman, inanimateOption, tfAtomic],
+		},
+		{
+			makeTransformationText:function(){return String.format("you become a plush toy shaped like {0}", specificTarget ? "the" : subjectArticle);},
+			closingRemarkText: randomFrom([
+				"You look so cuddly!", 
+				"Hopefully you can warn people ahead of time.",
+				"I just hope you don't get found by any dogs.",
+				"People do all sorts of things with plush toys."]),
+			makeAdditionalExplaination: function() {return randomFrom([
+				"You can still move when transformed.", 
+				"Everyone loves playing with you.",
 				])},
 			sets: [subjectIsInanimate, allowBeasts],
 			requires: [subjectInhuman, inanimateOption, tfAtomic],
@@ -1426,7 +1441,7 @@ function generateCurse() {
 			makeAdditionalExplaination: function() {return randomFrom([
 				decidedAndTrue(subjectFemale) ? "You also have an udder and give milk." : "You can always feel a 'moo' building in your throat, begging to be let out.",
 				decidedAndTrue(subjectFemale) ? "You have pink fur and an udder that gives delicious strawberry-flavored milk." : "You feel an irritating itch on your abdomen, and upon scratching it, a milky udder springs forth.",
-				decidedAndTrue(subjectFemale) ? "You have brown fur and an udder that gives delicious chochocolate milk." : "You can always feel a 'moo' building in your throat, begging to be let out.",
+				decidedAndTrue(subjectFemale) ? "You have brown fur and an udder that gives delicious chocolate milk." : "You can always feel a 'moo' building in your throat, begging to be let out.",
 				decidedAndTrue(subjectFemale) ? "You also have an udder, and the milk is deeply addictive." : "You hate the color red, and you find cows strangely alluring.",
 				"You can always feel a 'moo' building in your throat, begging to be let out."]);},
 			sets: [determinesRandomSex, mundaneAnimalSubject, setPussyName("sloppy ".concat(pussyName)), setExtremitiesName("hooves"), setFacialFeature("clumsy snout")],
@@ -1440,6 +1455,7 @@ function generateCurse() {
 			closingRemarkText: randomFrom([
 				"That's a solid breed.",
 				"Now beg.",
+				"Doggy want a bone? I'm sure you do.",
 				"Some people have a hard time <a href=\"https://www.furaffinity.net/view/31505769/\"> " +
 					"resisting the urge to let their inner dog out</a>.",]),
 			sets: [determinesRandomSex, mundaneAnimalSubject, setPussyName("puffy ".concat(pussyName)), setDickName("knotted ".concat(dickName)), setExtremitiesName("paws")],
@@ -1480,13 +1496,23 @@ function generateCurse() {
 		},
 		{
 			makeSubjectText: function(){return isDecided(subjectFemale) ? subjectFemale ? "hen" : "rooster" : "chicken";},
-			chosen: function(){extremitiesName = "talons", facialFeatureName = randomFrom(["beak", "plumage"]);},
+			makeAdditionalExplaination: function() {return randomFrom([
+				decidedAndTrue(subjectFemale) ? "You have to lay an egg several times a day." : "Seed seems a lot tastier.",
+				decidedAndTrue(subjectFemale) ? "You have a tendency to suddenly lay an egg if you're spooked." : "Despite your gender, occasionally you still lay an egg.",
+				decidedAndTrue(subjectFemale) ? "You begin to enjoy frequent egg-laying." : "You sometimes idly scratch at the ground with your feet.",
+				"You sometimes idly scratch at the ground with your feet.",
+				"Your speech is occasionally interrupted by clucks."]);},
+			chosen: function(){extremitiesName = "scaly talons", facialFeatureName = randomFrom(["beak", "plumage"]);},
 			sets: [determinesRandomSex, mundaneAnimalSubject, setPussyName("cloaca"), setDickName("cloaca")],
 			requires: [becomingCreatureHybrid, beastOption],
 		},
 		{
-			subjectText: randomFrom(["rat", "mouse", "kangaroo mouse"]),
-			chosen: function(){facialFeatureName = randomFrom(["whiskers", "pointed snout"]);},
+			subjectText: randomFrom(["rat", "mouse"]),
+			closingRemarkText: randomFrom([
+				"Don't go gnawing on anything.",
+				"Those naked tails are a little weird, huh.",
+				"Do you want some cheese?",]),
+			chosen: function(){facialFeatureName = randomFrom(["whiskers", "pointed snout", "buckteeth"]);},
 			requires: [beastOption],
 		},
 		{
@@ -1495,7 +1521,7 @@ function generateCurse() {
 				"duck", 
 				isDecided(subjectFemale) ? subjectFemale ? "duck" : "duck" : "duck",
 				"goose"]);}, 
-			chosen: function(){extremitiesName = "talons"; facialFeatureName = randomFrom(["beak", "plumage"]);},
+			chosen: function(){extremitiesName = "webbed feet"; facialFeatureName = randomFrom(["bill", "feathers"]);},
 			requires: [beastOption],
 			sets: [mundaneAnimalSubject, setPussyName("cloaca"), setDickName("cloaca")],
 			makeClosingRemarkText: function(){return String.format("Does that mean you have a cloaca now? {0}", 
@@ -1511,9 +1537,15 @@ function generateCurse() {
 		},
 		{
 			makeSubjectText: function(){return decidedAndTrue(subjectFemale) ? "sow" : "boar";},
+			additionalExplaination: randomFrom([
+				"Your speech is interspersed with loud snorts.",
+				"You have the urge to eat a lot more.",
+			]),
 			closingRemarkText: randomFrom([
 				"Oink oink.",
 				"I do love bacon.",
+				"Hope you like wallowing in mud, piggy.",
+				"Not exactly the most... appealing animal.",
 				"I know an excellent puddle of mud you should check out.",]),
 			sets: [determinesRandomSex, mundaneAnimalSubject, setDickName("corkscrewed ".concat(dickName)), setExtremitiesName("trotters")],
 			requires: [beastOption],
@@ -1523,7 +1555,8 @@ function generateCurse() {
 			chosen: function(){extremitiesName = "hooves"; facialFeatureName = "horns";},
 			makeAdditionalExplaination: function(){return decidedAndTrue(subjectFemale) 
 				? "You have a swollen pair of dugs between your legs that must be milked twice a day."
-				: "Your pupils are horizontal.";},
+				: "Your pupils are horizontal.",
+				"Your speech is interspersed with awkward bleats.";},
 			closingRemarkText: "Maybe it'll make you a better climber.",
 			sets: [determinesRandomSex, mundaneAnimalSubject],
 			requires: [beastOption],
@@ -1558,6 +1591,7 @@ function generateCurse() {
 					? "You have a pseudopenis, complete with a fatty sack standing in for testicles." 
 					: "Remember: male hyenas are submissive to the females.",
 				"An infectious laughter spills out from between your lips when you least expect it.",
+				"Your tongue constantly drips with slobber.",
 				"Like most hyenas, you smell pretty bad.",])
 				;},
 			closingRemarkText: "<a href=\"https://www.furaffinity.net/view/32879967/\">Yeen Queen</a> is my favorite band!",
@@ -1596,6 +1630,7 @@ function generateCurse() {
 				: "Walking and running become more difficult than hopping.";},
 			closingRemarkText: randomFrom([
 				"Ribbit.",
+				"I know, I know, it's been done before. What're you gonna do about it though, froggy?",
 				"Does this mean you're going to start eating flies?",]),
 			requires: [beastOption, uncommon],
 			sets: [mundaneAnimalSubject, setExtremitiesName("sticky pads")],
@@ -1631,12 +1666,18 @@ function generateCurse() {
 			closingRemarkText: randomFrom([
 				"Do you smell something?",
 				"I'll keep my distance.",
+				"I'll get some tomato juice.",
+				"I'll be sure not to spook you.",
+				"You might want to avoid closed spaces.",
 				"I'm not sure if a shower will help with the smell.",]),
 			additionalExplaination: randomFrom([
 				"You spray reflexively when startled.",
+				"Hope you don't mind being stinky.",
 				"It takes you a while to get used to your smell.",
 				"You can't resist sharing your scent with those you love.",
 				"You naturally smell pretty... skunky.",
+				"To some, your stink acts as a potent aphrodisiac.",
+				"You struggle to keep your scent glands under control.",
 				"People seem very wary of you.",
 			]),
 			requires: [beastOption],
@@ -1695,7 +1736,7 @@ function generateCurse() {
 			makeSubjectText: function(){return isDecided(subjectFemale) ? subjectFemale ? "mare" : "stallion" : "horse";}, 
 			chosen: function(){extremitiesName = "hooves";},
 			makeAdditionalExplaination: function(){return Math.random() < 0.5 ? "" : crotchBoobsDescription()},
-			sets: [determinesRandomSex, mundaneAnimalSubject, setPussyName("winking ".concat(pussyName)), setDickName("flared ".concat(dickName))],
+			sets: [determinesRandomSex, mundaneAnimalSubject, setPussyName(randomFrom(["rubbery ", "winking ", "thick-lipped ", "animal "]).concat(pussyName)), setDickName("flared ".concat(dickName))],
 			requires: [beastOption],
 		},
 		{
@@ -1710,6 +1751,7 @@ function generateCurse() {
 			additionalExplaination: randomFrom([
 				"Your eyes have a deeply comforting quality about them.",
 				"You produce a venom that acts as a powerful aphrodisiac.",
+				"Your tongue flits out from your mouth frequently and reflexively.",
 				"Bondage suddenly seems like a great pastime."
 			]),
 			closingRemarkText: "Just as I like 'em: thick and slithery.",
@@ -1758,6 +1800,7 @@ function generateCurse() {
 				"You become hopelessly narcissistic.", 
 				"You find yourself drooling much more than you used to.",
 				"You have an uncanny ability to get others to follow your orders.", 
+				"You become a LOT more.. dominant.",
 				"You are overcome by a deep, burning sexual drive.",
 				"People who spend a lot of time near you slowly transform into obedient kobold slaves.", 
 				]),
@@ -1784,7 +1827,9 @@ function generateCurse() {
 			chosen: function(){extremitiesName = "claws", facialFeatureName = "tiny horns";},
 			additionalExplaination: randomFrom([
 				"You have a hopeless need to be commanded by a powerful, preferably scaled master.", 
+				"You feel far more submissive.",
 				"When you're upset, puffs of smoke erupt from your nostrils.",
+				"You become much more subservient.",
 				"Thinking of dragons makes you exceptionally horny."
 				]),
 			closingRemarkText: randomFrom(["I think you'll be adorable.", "I love those thick, lizardy tails!", "You'll make a fine sex slave to some dragon."]),
@@ -1904,6 +1949,7 @@ function generateCurse() {
 					"someone massages you",
 					"someone slaps your ass",
 					"someone spanks you",
+					"you are penetrated",
 				])),
 			requires: [subjectIsAnimate],
 		},
@@ -1932,6 +1978,8 @@ function generateCurse() {
 					decidedAndTrue(subjectInanimate) ? "are used by five humans" : "have sex", 
 					decidedAndTrue(subjectInanimate) ? "are used by a human" : decidedAndTrue(subjectFemale) ? "get pregnant" : "reproduce", 
 					decidedAndTrue(subjectInanimate) ? "are used by any creature" : "orgasm",
+					"are penetrated",
+					"get wet",
 					"are recognized by someone else you know"]));},
 			closingRemarkText: "I'm sure you won't have any trouble resisting the urge to stay that way forever.",
 			requires: [nsfw],
@@ -1950,7 +1998,10 @@ function generateCurse() {
 		{
 			durationText: String.format("You remain this way until you have been owned by a human for at least a {0}.", 
 				randomFrom(["week", "month", "year"])),
-			closingRemarkText: "You'd better learn to follow commands and be docile. Don't want them to get rid of you.",
+			closingRemarkText: randomFrom([
+			"I'm sure you'll make excellent property.",
+			"Make sure to behave!",
+			"You'd better learn to follow commands and be docile. Don't want them to get rid of you."]),
 			requires: [mundaneAnimalSubject, notBecomingHybrid, beastOption],
 		},
 		{
@@ -1974,7 +2025,8 @@ function generateCurse() {
 			makeDurationText: function(){return isUndecided(subjectFemale)
 					? "You remain this way until you have sex with 5 different people." 
 				: subjectFemale ? "You can only return to normal once 5 people cum inside of you." 
-					: "You can only return to normal once you cum inside 5 people.";},
+					: "You can only return to normal once you cum inside 5 people."
+					"You can only return to normal once 5 people cum inside of you.";},
 			requires: [lewd, subjectIsLiving]
 		},
 		{
@@ -1986,6 +2038,7 @@ function generateCurse() {
 				"It's not really amoral if you're the same species, right?",
 				"It's okay. I don't think anyone will judge you.",
 				"That's bound to be a little wild.",
+				"It's fine, you're both animals anyway.",
 				"You may not like it, but I assure you it's the only way.",
 				"I'm sure you'll be able to handle it.",
 			]),
@@ -2095,11 +2148,12 @@ function generateCurse() {
 			additionalExplaination: randomFrom([
 				"The time of day when you lay your eggs is random. A shifting feeling in your belly gives you 30 seconds warning before you drop.",
 				"The first time laying is painful. By the end of the first week, it starts to become pleasurable.",
+				"You often wake up to find you've laid in your sleep.",
 				"Your eggs can be fertilized by any creature. You can tell which ones are carrying young and have an urge to nest on them.",
 				"Others who spend time around your eggs are compelled to take care of them."
 				]),
 			makeClosingRemarkText: function(){return String.format("Does that mean you have a cloaca now? {0}", 
-				randomFrom(["Weird.", "Ha.", "Gross.", "Ew.", "Good luck with that."]))},
+				randomFrom(["Weird.", "Ha.", "Gross.", "Ew.", "Freaky", "Good luck with that."]))},
 			requires: [subjectIsLiving, humanoidOption],
 		},
 		{
@@ -2112,15 +2166,6 @@ function generateCurse() {
 				randomFrom(["two", "three", "four"]),
 				randomFrom(["They're all the same size.", "Each additional pair is smaller than those above."]));},
 			requires: [lewd, subjectIsLiving]
-		},
-		{
-			makeComplicationText: function(){
-				if (!tgSelected && decidedAndTrue(subjectFemale)) {
-					return "An additional pussy opens beside your first."
-				}
-				return decidedAndTrue(subjectFemale) ? "A penis grows above your pussy." : "You grow an additional penis."
-			}, 
-			requires: [lewd, subjectIsAnimate],
 		},
 		{
 			makeComplicationText: function() {
@@ -2138,7 +2183,12 @@ function generateCurse() {
 		},
 		{
 			complicationText: "While transformed, your bladder is much weaker.",
-			closingRemarkText: "You should look into fixing that leak. Diapers, maybe?"
+			closingRemarkText: randomFrom([
+				"You should look into fixing that leak. Diapers, maybe?",
+				"Good luck trying to hold it in.",
+				"That's gonna be embarrassing.",
+				"Try not to wet yourself too often.",
+				]),
 		},
 		{
 			complicationText: "Your clothes are ruined by the transformation.",

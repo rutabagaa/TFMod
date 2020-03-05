@@ -14,13 +14,13 @@ h1 {
 }
 
 body {
-	background-color: black;
-	color: violet;	
+	background-color: #4d4351;
+	color: #b3a7b7;	
 }
 
 .jumbotron {
-	background-color: violet;
-	color: black;
+	background-color: #351941;
+	color: #fbd160;
 }
 
 .btn-outline-secondary {
@@ -28,7 +28,7 @@ body {
 }
 
 .curseOutput {
-	background-color: violet;
+	background-color: #fffade;
 	color: black;
 	text-indent: 40px;
 }
