@@ -1673,7 +1673,7 @@ function generateCurse() {
 		},
 		{
 			subjectText: randomFrom(["monkey", "baboon", "lemur"]),
-			chosen: function(){extremitiesName = "hand-like feet"; randomFrom(["upturned button nose", "big ears"]);},
+			chosen: function(){extremitiesName = "hand-like feet"; facialFeatureName = randomFrom(["upturned button nose", "big ears"]);},
 			additionalExplaination: randomFrom([
 				"Living in the trees seems like a good idea.",
 				"You develop an affinity for climbing things.",
