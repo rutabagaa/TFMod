@@ -1539,7 +1539,7 @@ function generateCurse() {
 			makeSubjectText: function(){return decidedAndTrue(subjectFemale) ? "sow" : "pig";},
 			additionalExplaination: randomFrom([
 				"Your speech is interspersed with loud snorts.",
-				"Even the slightest amount of food causes you to grow bigger."
+				"Even the slightest amount of food causes you to grow bigger.",
 				"You have the urge to eat a lot more.",
 			]),
 			closingRemarkText: randomFrom([
@@ -1547,7 +1547,8 @@ function generateCurse() {
 				"I do love bacon.",
 				"Hope you like wallowing in mud, piggy.",
 				"Not exactly the most... appealing animal.",
-				"I know an excellent puddle of mud you should check out.",]),
+				"I know an excellent puddle of mud you should check out.",
+			]),
 			sets: [determinesRandomSex, mundaneAnimalSubject, setDickName("corkscrewed ".concat(dickName)), setExtremitiesName("trotters")],
 			requires: [beastOption],
 		},
@@ -1620,7 +1621,6 @@ function generateCurse() {
 			subjectText: randomFrom(["tanuki", "raccoon dog"]),
 			chosen: function(){facialFeatureName = randomFrom(["whiskers", "ears"]);},
 			additionalExplaination: randomFrom([
-				decidedAndTrue(subjectFemale) ? "You have tantalizingly soft fur." : "Your balls tend to balloon larger until emptied.",
 				"You find that you naturally feel a little drunk.",
 				"You have a strange affinity for leaves.",
 				"You have tantalizingly soft fur.",
@@ -1657,7 +1657,7 @@ function generateCurse() {
 				"I know, I know, it's been done before. What're you gonna do about it though, froggy?",
 				"Does this mean you're going to start eating flies?",]),
 			requires: [beastOption, uncommon],
-			sets: [mundaneAnimalSubject, setExtremitiesName("sticky pads")],
+			sets: [mundaneAnimalSubject, setExtremitiesName("sticky pads"), setPussyName(randomFrom(["slimy ", "slick ", "sticky ", "amphibian "]).concat(pussyName)), setDickName(randomFrom(["slimy ", "slick ", "sticky ", "amphibian "]).concat(dickName))],
 		},
 		{
 			subjectText: "kangaroo",
@@ -1672,7 +1672,7 @@ function generateCurse() {
 			sets: [mundaneAnimalSubject, setDickName("upside-down dick"), setExtremitiesName("huge paws")],
 		},
 		{
-			subjectText: randomFrom(["monkey", "baboon", "lemur"]),
+			subjectText: randomFrom(["monkey", "baboon", "lemur", "orangutan"]),
 			chosen: function(){extremitiesName = "hand-like feet"; facialFeatureName = randomFrom(["upturned button nose", "big ears"]);},
 			additionalExplaination: randomFrom([
 				"Living in the trees seems like a good idea.",
@@ -1684,6 +1684,20 @@ function generateCurse() {
 				"Maybe you should try living in a treehouse.",]),
 			requires: [beastOption],
 			sets: [mundaneAnimalSubject, setExtremitiesName("hand-like feet")],
+		},
+		{
+			subjectText: "gorilla",
+			chosen: function(){extremitiesName = "hand-like feet"; facialFeatureName = randomFrom(["upturned nose", "big ears"]);},
+			additionalExplaination: randomFrom([
+				"Living amongst the trees seems like a good idea.",
+				"You develop an affinity for climbing things.",
+			]),
+			closingRemarkText: randomFrom([
+				"Please promise you won't start throwing poop.",
+				"Do you want a banana?",
+				"Maybe you should try living in a treehouse.",]),
+			requires: [beastOption],
+			sets: [mundaneAnimalSubject, setExtremitiesName("hand-like feet"), setDickName("thick, dark ".concat(dickName))],
 		},
 		{
 			subjectText: "skunk",
@@ -1890,7 +1904,7 @@ function generateCurse() {
 		},
 		{
 			subjectText: "goblin", 
-			chosen: function(){facialFeatureName = randomFrom(["vibrant hair", "large, pointed ears", "sharp teeth"]);},
+			chosen: function(){extremitiesName = "clawed, green feet"; facialFeatureName = randomFrom(["vibrant hair", "large, pointed ears", "sharp teeth"]);},
 			additionalExplaination: randomFrom([
 				String.format("You are extraordinarily {0}.", isDecided(subjectFemale) ? subjectFemale ? "fertile" : "virile" : "fertile"),
 				"Wearing clothes seems ridiculous to you.",
@@ -1901,7 +1915,7 @@ function generateCurse() {
 		{
 			subjectText: randomFrom(["orc", "ogre", "troll"]),
 			chosen: function(){subjectArticle = "an"; facialFeatureName = randomFrom(["horns", "tusks"]);},
-			sets: [subjectInhuman, setPussyName("powerful ".concat(pussyName)), nonMundaneSubject, setDickName(randomFrom(["muscular ", "mighty ", "horselike ", "massive ", "intimidating "]).concat(dickName))],
+			sets: [subjectInhuman, setPussyName("powerful ".concat(pussyName)), nonMundaneSubject, setDickName(randomFrom(["thick ", "unweildly ", "horselike ", "massive ", "intimidating "]).concat(dickName))],
 			requires: [notBecomingHybrid, nonMundaneSubject, humanoidOption],
 		},
 		{
