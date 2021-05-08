@@ -813,6 +813,7 @@ function generateCurse() {
 					"get caught in the rain",
 					"sneeze",
 					"cum",
+					"fall asleep on the sofa",
 					"fall asleep",
 					"spill something on yourself",
 					"go outside",
@@ -1024,6 +1025,7 @@ function generateCurse() {
 		"a chubby",
 		"a tubby",
 		"a fat",
+		"an obese",
 		"an overweight",
 		decidedAndTrue(subjectFemale) ? "a volumptuous" : "a dad-bod", 
 		"a curvy",
@@ -1036,7 +1038,7 @@ function generateCurse() {
 
 	var expansionTF = {
 		makeTransformationText:function(){
-			var growthWordSingular = ["swells", "grows"];
+			var growthWordSingular = ["swells", "grows", "expands"];
 			var growthWordPlural = ["swell", "grow", "expand"];
 			var breastSize = decidedAndTrue(stagesTF) ? "an additional cup size" 
 				: String.format("{0} {1}", 
@@ -1099,6 +1101,7 @@ function generateCurse() {
 				: decidedAndFalse(subjectFemale) ? randomFrom([
 					{a: "penis", b: randomFrom(growthWordSingular), c: randomFrom([defaultSize, penisSize])},
 					{a: "balls", b: randomFrom(growthWordPlural), c: defaultSize},
+					{a: "nuts", b: randomFrom(growthWordPlural), c: defaultSize},
 					{a: "cock and balls", b: randomFrom(growthWordPlural), c: defaultSize}
 					])
 				: {a: "genitals", b: randomFrom(growthWordPlural), c: defaultSize};
@@ -1926,9 +1929,15 @@ function generateCurse() {
 			requires: [notBecomingHybrid, nonMundaneSubject, humanoidOption],
 		},
 		{
+			subjectText: randomFrom(["sasquatch", "yeti"]),
+			chosen: function(){subjectArticle = "a"; extremitiesName = "huge, hairy feet"; facialFeatureName = randomFrom(["big ears", "tusks"]);},
+			sets: [subjectInhuman, setPussyName("hairy ".concat(pussyName)), nonMundaneSubject, setDickName(randomFrom(["thick ", "unweildly ", "uncut ", "massive ", "intimidating "]).concat(dickName))],
+			requires: [notBecomingHybrid, nonMundaneSubject, humanoidOption],
+		},
+		{
 			makeSubjectText: function(){return decidedAndTrue(subjectFemale) ?  "minotauress": "minotaur";},
 			chosen: function(){return decidedAndTrue(subjectFemale) ? function(){facialFeatureName = "small horns"} : function(){facialFeatureName = "intimidating horns";};},
-			sets: [determinesRandomSex, subjectInhuman, nonMundaneSubject],
+			sets: [determinesRandomSex, subjectInhuman, nonMundaneSubject, setPussyName("sloppy ".concat(pussyName)), setExtremitiesName("hooves"), setDickName("long ".concat(dickName))],
 			requires: [notBecomingHybrid, nonMundaneSubject, humanoidOption],
 		},
 		{	// Human types
