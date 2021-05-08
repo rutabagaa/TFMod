@@ -1444,7 +1444,7 @@ function generateCurse() {
 				decidedAndTrue(subjectFemale) ? "You have brown fur and an udder that gives delicious chocolate milk." : "You can always feel a 'moo' building in your throat, begging to be let out.",
 				decidedAndTrue(subjectFemale) ? "You also have an udder, and the milk is deeply addictive." : "Your balls grow heavy with seed.",
 				"You can always feel a 'moo' building in your throat, begging to be let out."]);},
-			sets: [determinesRandomSex, mundaneAnimalSubject, setPussyName("sloppy ".concat(pussyName)), setExtremitiesName("hooves"), setDickName("long ".concat(dickName)) setFacialFeature("clumsy snout")],
+			sets: [determinesRandomSex, mundaneAnimalSubject, setPussyName("sloppy ".concat(pussyName)), setExtremitiesName("hooves"), setDickName("long ".concat(dickName)), setFacialFeature("clumsy snout")],
 			requires: [beastOption],
 		},
 		{
