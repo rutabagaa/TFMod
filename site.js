@@ -1558,6 +1558,7 @@ function generateCurse() {
 			makeAdditionalExplaination: function(){return decidedAndTrue(subjectFemale) 
 				? "You have a swollen pair of dugs between your legs that must be milked twice a day."
 				: "Your pupils are horizontal.",
+				"Your pupils are horizontal.",
 				"Your speech is interspersed with awkward bleats.";},
 			closingRemarkText: "Maybe it'll make you a better climber.",
 			sets: [determinesRandomSex, mundaneAnimalSubject],
@@ -1567,7 +1568,7 @@ function generateCurse() {
 			makeSubjectText: function(){return isDecided(subjectFemale) ? subjectFemale ? "she-bear" : "male bear" : "bear";},
 			additionalExplaination: randomFrom([
 				"Your body naturally rounds out.",
-				"Even the slightest amount of food causes you to grow bigger."
+				"Even the slightest amount of food causes you to grow bigger.",
 				"You have the urge to eat a lot more.",
 			]),
 			requires: [beastOption],
