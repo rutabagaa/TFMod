@@ -1539,7 +1539,7 @@ function generateCurse() {
 			makeSubjectText: function(){return decidedAndTrue(subjectFemale) ? "sow" : "pig";},
 			additionalExplaination: randomFrom([
 				"Your speech is interspersed with loud snorts.",
-				"Even the slightest amount of food causes you to grow bigger."
+				"Even the slightest amount of food causes you to grow bigger.",
 				"You have the urge to eat a lot more.",
 			]),
 			closingRemarkText: randomFrom([
