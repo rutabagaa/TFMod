@@ -1026,6 +1026,7 @@ function generateCurse() {
 		"a tubby",
 		"a fat",
 		"an obese",
+		"a nerdy",
 		"an overweight",
 		decidedAndTrue(subjectFemale) ? "a volumptuous" : "a dad-bod", 
 		"a curvy",
@@ -1034,7 +1035,7 @@ function generateCurse() {
 		decidedAndTrue(subjectFemale) ? "a shortstack" : "a short",
 		"a gigantic",]);};
 	var pussyName = randomFrom(["pussy", "vulva", "vagina"]);
-	var dickName = randomFrom(["dick", "cock", "penis"]);
+	var dickName = randomFrom(["dick", "schlong", "cock", "penis"]);
 
 	var expansionTF = {
 		makeTransformationText:function(){
@@ -1307,6 +1308,7 @@ function generateCurse() {
 			additionalExplaination: beastsSelected ? randomFrom([
 				"You adopt the donor's sexual urges.",
 				"Your lewder thoughts become those of the donor. They feel quite alien to you.",
+				"You find yourself growing aroused at things you wouldn't have before.",
 				"You adopt the donor's sexual preferences.",]) 
 				: "At least you're still mostly human.",
 			requires: [nsfw, genitalReplacementAllowed, tfAtomic, subjectSexBecomesSpecificTriggerSex, humanoidOption],
@@ -1406,6 +1408,7 @@ function generateCurse() {
 				"petite",
 				"motherly",
 				"large",
+				"awkward",
 				"wobbly",
 				"giant",
 				"perky"
@@ -1415,6 +1418,7 @@ function generateCurse() {
 				"udder-like",
 				"bestial",
 				"sloshing",
+				"animalistic",
 				"",
 			]),
 			randomFrom([
@@ -1947,6 +1951,9 @@ function generateCurse() {
 					decidedAndTrue(subjectFemale) ? "curvy" : "feminine",
 					"sexy",
 					"gorgeous",
+					"fat",
+					"obese",
+					"nerdy",
 					"tall",
 					randomFrom(["short", "five foot tall", "six foot tall", "four-and-a-half foot tall", "tall", "seven foot tall"]),
 					decidedAndTrue(subjectFemale) ? "leggy" : "fit",
@@ -1962,11 +1969,11 @@ function generateCurse() {
 					"latino",
 				];
 				var afterDescriptor = [
-					decidedAndTrue(subjectFemale) ? " with breast implants" : "",
-					decidedAndTrue(subjectFemale) ? " with fake-looking breast implants" : "",
-					decidedAndTrue(subjectFemale) ? " with an enormous ass" : "",
-					decidedAndTrue(subjectFemale) ? " with massive, natural breasts" : "",
-					decidedAndTrue(subjectFemale) ? " with an hourglass figure" : "",
+					decidedAndTrue(subjectFemale) ? " with breast implants" : " with a big, cut cock",
+					decidedAndTrue(subjectFemale) ? " with fake-looking breast implants" : " with a thumb-sized dick",
+					decidedAndTrue(subjectFemale) ? " with an enormous ass" : " with excessive body hair",
+					decidedAndTrue(subjectFemale) ? " with massive, natural breasts" : " with hand-filling hairy balls",
+					decidedAndTrue(subjectFemale) ? " with an hourglass figure" : " with a big, hairy belly",
 				];
 				var usePrimary = Math.random() < 0.7;
 				var useSecondary = Math.random() < 0.9;
@@ -2262,7 +2269,7 @@ function generateCurse() {
 		},
 		{
 			makeComplicationText: function(){return String.format(
-				"If you weren't before, you are now {0}.", randomFrom(["bisexual", "gay", "straight"]));},
+				"If you weren't before, you are now {0}.", randomFrom(["bisexual", "gay", "straight", "incredibly gay", "incredibly straight"]));},
 			requires: [subjectIsAnimate],
 		},
 		{
