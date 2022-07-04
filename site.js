@@ -1630,7 +1630,7 @@ function generateCurse() {
 				"You find that you naturally feel a little drunk.",
 				"You have a strange affinity for leaves.",
 				"You have tantalizingly soft fur.",
-				lewdSelected && decidedAndFalse(subjectFemale) ? "Your balls grow larger the longer you go without release, often becoming excessive." : ""]);,
+				lewdSelected && decidedAndFalse(subjectFemale) ? "Your balls grow larger the longer you go without release, often becoming excessive." : ""]),
 			requires: [becomingCreatureHybrid, beastOption],
 			sets: [mundaneAnimalSubject, setExtremitiesName("paws")],
 		},
