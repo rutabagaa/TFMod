@@ -1524,7 +1524,7 @@ function generateCurse() {
 			requires: [beastOption],
 		},
 		{
-			makeSubjectText: randomFrom(["duck,", "goose"]), 
+			subjectText: randomFrom(["duck,", "goose"]), 
 			chosen: function(){extremitiesName = "webbed feet"; facialFeatureName = randomFrom(["bill", "feathers"]);},
 			requires: [beastOption],
 			sets: [mundaneAnimalSubject, setPussyName("cloaca"), setDickName("cloaca")],
