@@ -1633,7 +1633,7 @@ function generateCurse() {
 				lewdSelected && decidedAndFalse(subjectFemale) ? "Your balls grow larger the longer you go without release, often becoming excessive." : ""]);
 			requires: [becomingCreatureHybrid, beastOption],
 			sets: [mundaneAnimalSubject, setExtremitiesName("paws")],
-			},
+		},
 		{
 			makeSubjectText: function(){return isDecided(subjectFemale) ? subjectFemale ? "rabbit doe" : "rabbit buck" : randomFrom(["rabbit", "bunny"]);},
 			chosen: function(){facialFeatureName = randomFrom(["buck teeth", "long ears"]);},
