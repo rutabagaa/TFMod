@@ -1631,11 +1631,9 @@ function generateCurse() {
 				"You have a strange affinity for leaves.",
 				"You have tantalizingly soft fur.",
 				lewdSelected && decidedAndFalse(subjectFemale) ? "Your balls grow larger the longer you go without release, often becoming excessive." : ""]);
-		},
-			]),
-			requires: [becomingCreatureHybrid, beastOption, uncommon],
+			requires: [becomingCreatureHybrid, beastOption],
 			sets: [mundaneAnimalSubject, setExtremitiesName("paws")],
-		},
+			},
 		{
 			makeSubjectText: function(){return isDecided(subjectFemale) ? subjectFemale ? "rabbit doe" : "rabbit buck" : randomFrom(["rabbit", "bunny"]);},
 			chosen: function(){facialFeatureName = randomFrom(["buck teeth", "long ears"]);},
@@ -1690,7 +1688,7 @@ function generateCurse() {
 				"Please promise you won't start throwing poop.",
 				"Do you want a banana?",
 				"Maybe you should try living in a treehouse.",]),
-			requires: [beastOption],
+			requires: [becomingCreatureHybrid, beastOption],
 			sets: [mundaneAnimalSubject, setExtremitiesName("hand-like feet")],
 		},
 		{
