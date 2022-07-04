@@ -1626,11 +1626,11 @@ function generateCurse() {
 		{
 			subjectText: randomFrom(["tanuki", "raccoon dog"]),
 			chosen: function(){facialFeatureName = randomFrom(["whiskers", "mask", "ears"]);},
-			additionalExplaination: randomFrom([
+			additionalExplaination: function () {return randomFrom([
 				"You find that you naturally feel a little drunk.",
 				"You have a strange affinity for leaves.",
 				"You have tantalizingly soft fur.",
-				lewdSelected && decidedAndFalse(subjectFemale) ? "Your balls grow larger the longer you go without release, often becoming excessive." : ""]),
+				lewdSelected && decidedAndFalse(subjectFemale) ? "Your balls grow larger the longer you go without release, often becoming excessive." : ""]);},
 			requires: [becomingCreatureHybrid, beastOption],
 			sets: [mundaneAnimalSubject, setExtremitiesName("paws")],
 		},
@@ -1762,10 +1762,11 @@ function generateCurse() {
 			chosen: function(){extremitiesName = "fins";},
 			makeAdditionalExplaination: function() {return randomFrom([
 				"A fishy smell follows you around.",
+				"Your body is always at least a little slick.",
 				"You have both gills and lungs, allowing you to live comfortably in the water and on land.",
 				lewdSelected && decidedAndFalse(subjectFemale) ? "You cum whenever you smell fish eggs." : ""]);},
 			requires: [becomingCreatureHybrid, beastOption, uncommon],
-			sets: [mundaneAnimalSubject, setPussyName("vent"), setDickName("genital vent")],
+			sets: [mundaneAnimalSubject, setPussyName("fishy vent"), setDickName("genital vent")],
 		},
 		{
 			makeSubjectText: function(){return isDecided(subjectFemale) ? subjectFemale ? "jenny" : "jackass": "donkey";}, 
