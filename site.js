@@ -1806,39 +1806,9 @@ function generateCurse() {
 			sets: [mundaneAnimalSubject, setPussyName("scaled vent"), setDickName("hemipenes")],
 		},
 		{
-			subjectText: "last animal you ate", 
-			closingRemarkText: randomFrom([
-				"Sample any exotic meats lately?",
-				"On the plus side, now, you look just... scrumptious.",
-				"Mmm-mm. This tastes just like you."]),
-			requires: [uncommon, varyingSubject, beastOption, tfAtomic],
-			sets: [mundaneAnimalSubject, specificIndividualTarget, setExtremitiesName("hooves"), doNotAssignSubjectSex],
-		},
-		{
 			makeSubjectText: function(){return isDecided(subjectFemale) ? subjectFemale ? "dire wolf bitch": "dire wolf stud" : "dire wolf";},
 			sets: [subjectInhuman, determinesRandomSex, setPussyName("puffy ".concat(pussyName)), nonMundaneSubject, setExtremitiesName("paws")],
 			requires: [nonMundaneSubject, beastOption],
-		},
-		{
-			makeSubjectText: function(){return String.format("{0} {1}-{2}", 
-				randomFrom([
-					"purple", "green", "red", "pink", "blue"
-				]),
-				randomFrom(["goo", "slime", "jelly"]),
-				isDecided(subjectFemale) ? subjectFemale ? "girl": "boy" : "person");},
-				chosen: function(){facialFeatureName = "gooey hair";},
-			additionalExplaination: randomFrom([
-				lewdSelected ? "You can form fully-sensitive reproductive organs anywhere on your body."
-					: "Holding your form takes a lot of concentration.",
-				"Whenever you relax, you melt into a puddle.", 
-				nsfwSelected || lewdSelected ?  "Contact with your body causes arousal."
-					: "Contact with your body causes drowsiness.", 
-				"You can alter your body shape, \"hair\", and facial features with a little effort.", 
-				"You control the viscosity of each part of your body individually.", 
-				]),
-			closingRemarkText: "Seems kind of messy to me.",
-			sets: [determinesRandomSex, subjectInhuman, setPussyName("gelatinous ".concat(pussyName)), setDickName("rubbery ".concat(dickName)), nonMundaneSubject],
-			requires: [notBecomingHybrid, nonMundaneSubject, humanoidOption]
 		},
 		{
 			makeSubjectText: function(){return isDecided(subjectFemale) ? subjectFemale ? "dragoness": "drake" : "dragon";},
@@ -1878,6 +1848,7 @@ function generateCurse() {
 				"You have a hopeless need to be commanded by a powerful, preferably scaled master.", 
 				"You feel far more submissive.",
 				"When you're upset, puffs of smoke erupt from your nostrils.",
+				"You're very short now, and it gets to you if someone teases you about it.",
 				"You become much more subservient.",
 				"Thinking of dragons makes you exceptionally horny."
 				]),
