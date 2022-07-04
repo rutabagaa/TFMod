@@ -1626,7 +1626,7 @@ function generateCurse() {
 		{
 			subjectText: randomFrom(["tanuki", "raccoon dog"]),
 			chosen: function(){facialFeatureName = randomFrom(["whiskers", "mask", "ears"]);},
-			additionalExplaination: function () {return randomFrom([
+			makeAdditionalExplaination: function () {return randomFrom([
 				"You find that you naturally feel a little drunk.",
 				"You have a strange affinity for leaves.",
 				"You have tantalizingly soft fur.",
@@ -1753,7 +1753,7 @@ function generateCurse() {
 				"A fishy smell follows you around.",
 				"Your rubbery skin must be moistened regularly.",
 				"Your skin becomes a lot more... blubbery.",
-				lewdSelected && decidedAndFalse(subjectFemale) ? "Your penis is prehensile, but it often moves with a mind of its own." : ""]);},
+				lewdSelected && decidedAndFalse(subjectFemale) ? "Your penis is prehensile, but it often moves with a mind of its own." : "You're always VERY wet down there."]);},
 			requires: [uncommon, becomingCreatureHybrid, beastOption],
 			sets: [mundaneAnimalSubject, setPussyName("blubbery vent"), setDickName("long, prehensile penis")],
 		},
