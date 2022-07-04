@@ -810,11 +810,14 @@ function generateCurse() {
 					"dance",
 					"attend a wedding",
 					"enter a body of water",
+					"make a joke at another's expense",
+					"remove all of your clothing",
 					"get caught in the rain",
 					"sneeze",
 					"cum",
 					"fall asleep on the sofa",
 					"fall asleep",
+					"fall asleep in public",
 					"spill something on yourself",
 					"go outside",
 					"sweat from a workout",
@@ -1026,6 +1029,9 @@ function generateCurse() {
 		"a tubby",
 		"a fat",
 		"an obese",
+		"a hirsute",
+		"a big-boned",
+		"a slobbish",
 		"a nerdy",
 		"an overweight",
 		decidedAndTrue(subjectFemale) ? "a volumptuous" : "a dad-bod", 
@@ -1283,6 +1289,25 @@ function generateCurse() {
 				: "Your nozzle is in the place of your belly button.",
 				"Your valve is an erogenous zone."
 				])},
+			sets: [subjectIsInanimate, allowBeasts],
+			requires: [subjectInhuman, inanimateOption, tfAtomic],
+		},
+		{
+			makeTransformationText: function () { return String.format("you become a tauric {0}", specificTarget ? "the" : subjectArticle); },
+			closingRemarkText: randomFrom([
+				"That'll get some stares.",
+				"Hopefully you don't struggle too much with stairs.",
+				"Welp, say goodbye to your modesty.",
+				"I hope you weren't too into sneakers."]),
+			makeAdditionalExplaination: function () {
+				return randomFrom([
+					"Your 'equipment' rests between your hindlegs.",
+					"You can't possibly reach your privates to alleviate your lust.",
+					"You're often paranoid about people peeking your private parts.",
+					"Whatever was between your legs now rests between your hindlegs, out of reach.",
+					"You struggle to adjust to your now rather impractical body."
+				])
+			},
 			sets: [subjectIsInanimate, allowBeasts],
 			requires: [subjectInhuman, inanimateOption, tfAtomic],
 		},
@@ -2048,6 +2073,10 @@ function generateCurse() {
 		},
 		{
 			durationText: "You will return to normal in a week, but each time you orgasm, the duration is increased by a day.", 
+			requires: [nsfw, subjectIsAnimate]
+		},
+		{
+			durationText: "You will return to normal after having sex with a new partner.",
 			requires: [nsfw, subjectIsAnimate]
 		},
 		{
