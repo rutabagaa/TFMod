@@ -1296,9 +1296,10 @@ function generateCurse() {
 			requires: [subjectInhuman, inanimateOption, tfAtomic],
 		},
 		{
-			makeTransformationText:function(){return String.format("you shift into {0} tauric {1}", 
-				Math.random() < 0.3 ? "a" : getBodyType(),
-				specificTarget ? "version of the" : "");},
+			makeTransformationText: function () {
+				return String.format("you shift into {0} tauric {1}",
+					Math.random() < 0.3 ? "a" : getBodyType(),
+					specificTarget ? "version of the" : "");
 			},
 			closingRemarkText: randomFrom([
 				"That'll get some stares.",
@@ -1314,8 +1315,8 @@ function generateCurse() {
 					"You struggle to adjust to your now rather impractical body."
 				])
 			},
-			sets: [allowBeasts],
-			requires: [subjectInhuman, tfAtomic],
+			sets: [becomingCreatureHybrid],
+			requires: [subjectInhuman, humanoidOption],
 		},
 		{
 			makeTransformationText:function(){return String.format("you become a plush toy shaped like {0}", specificTarget ? "the" : subjectArticle);},
