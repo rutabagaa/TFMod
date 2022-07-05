@@ -1308,8 +1308,8 @@ function generateCurse() {
 					"You struggle to adjust to your now rather impractical body."
 				])
 			},
-			sets: [subjectIsInanimate, allowBeasts],
-			requires: [subjectInhuman, inanimateOption, tfAtomic],
+			sets: [allowBeasts],
+			requires: [subjectInhuman, tfAtomic],
 		},
 		{
 			makeTransformationText:function(){return String.format("you become a plush toy shaped like {0}", specificTarget ? "the" : subjectArticle);},
@@ -1549,12 +1549,22 @@ function generateCurse() {
 			requires: [beastOption],
 		},
 		{
-			subjectText: randomFrom(["duck,", "goose"]), 
+			subjectText: randomFrom(["duck", "goose"]), 
 			chosen: function(){extremitiesName = "webbed feet"; facialFeatureName = randomFrom(["bill", "feathers"]);},
 			requires: [beastOption],
 			sets: [mundaneAnimalSubject, setPussyName("cloaca"), setDickName("cloaca")],
 			makeClosingRemarkText: function(){return String.format("Does that mean you have a cloaca now? {0}", 
 				randomFrom(["Weird.", "Unlucky.", "Gross.", "Ew.", "Unfortunate.", "Freaky.", "That's rough.", "Good luck with that."]))},
+		},
+		{
+			subjectText: "toucan",
+			chosen: function () { extremitiesName = "scaled talons"; facialFeatureName = randomFrom(["unweildly bill", "feathers"]); },
+			requires: [beastOption],
+			sets: [mundaneAnimalSubject, setPussyName("cloaca"), setDickName("cloaca")],
+			closingRemarkText: randomFrom([
+				"That'll take some getting used to.",
+				"Careful swinging that thing around.",
+				"Such an elegant bird. Not.",]),
 		},
 		{
 			makeSubjectText: function(){return decidedAndTrue(subjectFemale) ? "vixen" : "fox";},
