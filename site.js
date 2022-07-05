@@ -1298,8 +1298,8 @@ function generateCurse() {
 		{
 			makeTransformationText: function () { return String.format("you become {0} tauric {1}", specificTarget ? "the" : subjectArticle);
 				Math.random() < 0.3 ? "an" : getBodyType(),
-				specificTarget? "version of the": "";
-},
+					specificTarget ? "version of the" : "");
+			},
 			closingRemarkText: randomFrom([
 				"That'll get some stares.",
 				"Hopefully you don't struggle too much with stairs.",
