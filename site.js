@@ -1296,7 +1296,7 @@ function generateCurse() {
 			requires: [subjectInhuman, inanimateOption, tfAtomic],
 		},
 		{
-			makeTransformationText: function () { return String.format("you become {0} tauric {1}", specificTarget ? "the" : subjectArticle);
+			makeTransformationText: function () { return String.format("you become {0} tauric", specificTarget ? "the" : subjectArticle);
 				Math.random() < 0.3 ? "an" : getBodyType(),
 					specificTarget ? "version of the" : "");
 			},
