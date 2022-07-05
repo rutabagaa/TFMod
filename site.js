@@ -1306,15 +1306,13 @@ function generateCurse() {
 				"Hopefully you don't struggle too much with stairs.",
 				"Welp, say goodbye to your modesty.",
 				"I hope you weren't too into sneakers."]),
-			makeAdditionalExplaination: function () {
-				return randomFrom([
+			makeAdditionalExplaination: function () {return randomFrom([
 					"Your 'equipment' rests between your hindlegs.",
 					"You can't possibly reach your privates to alleviate your lust.",
 					"You're often paranoid about people peeking your private parts.",
 					"Whatever was between your legs now rests between your hindlegs, out of reach.",
 					"You struggle to adjust to your now rather impractical body."
-				])
-			},
+				])},
 			sets: [becomingCreatureHybrid],
 			requires: [subjectInhuman, humanoidOption],
 		},
